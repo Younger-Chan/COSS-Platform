@@ -2,6 +2,10 @@
 #define COSSMAIN_H
 
 #include <QMainWindow>
+#include <QSvgRenderer>
+#include <QMovie>
+#include "dashboardcircle.h"
+#include "buttonbar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +23,15 @@ public:
 
 private:
     Ui::CossMain *ui;
+    DashBoardCircle *dbPaint;
+    // DashBoardWave *dbwPaint;
+    ButtonBar *bb;
+
+private:
+    void initGui();
+    // QIcon loadSvgIcon(const QString &filePath, const QSize &size);
+
+private slots:
+    void slot_stacked_index(int);
 };
 #endif // COSSMAIN_H

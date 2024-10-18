@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/svg">
+        <file>svg/battery.svg</file>
+        <file>svg/certificates_origin.svg</file>
+        <file>svg/certificates_selected.svg</file>
+        <file>svg/dashboard_origin.svg</file>
+        <file>svg/dashboard_selected.svg</file>
+        <file>svg/doughnut_chart.svg</file>
+        <file>svg/language_chinese.svg</file>
+        <file>svg/language_english.svg</file>
+        <file>svg/message.svg</file>
+        <file>svg/message_tips.svg</file>
+        <file>svg/monitor_speed.svg</file>
+        <file>svg/proportion_chart.svg</file>
+        <file>svg/pulse_speed.svg</file>
+        <file>svg/rocket_origin.svg</file>
+        <file>svg/rocket_selected.svg</file>
+        <file>svg/router.svg</file>
+    </qresource>
+</RCC>

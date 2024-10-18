@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/gif">
+        <file>gif/ai.gif</file>
+        <file>gif/bk1.gif</file>
+        <file>gif/bk2.gif</file>
+        <file>gif/bk3.gif</file>
+        <file>gif/bk4.gif</file>
+        <file>gif/bk5.gif</file>
+        <file>gif/bk6.gif</file>
+        <file>gif/dl1.gif</file>
+        <file>gif/dl2.gif</file>
+        <file>gif/dl3.gif</file>
+        <file>gif/sx1.gif</file>
+        <file>gif/sx2.gif</file>
+        <file>gif/sx3.gif</file>
+        <file>gif/xz.gif</file>
+        <file>gif/yh1.gif</file>
+        <file>gif/yh2.gif</file>
+        <file>gif/yh3.gif</file>
+        <file>gif/yk1.gif</file>
+        <file>gif/yk2.gif</file>
+    </qresource>
+</RCC>
