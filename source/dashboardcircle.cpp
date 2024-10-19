@@ -175,10 +175,10 @@ void DashBoardCircle::paintEvent(QPaintEvent *pe)
     int offsetY = 60; // 向上偏移，确保文本在扇形内显示
     painter.drawText(center.x() - textWidth / 2, center.y() + textHeight / 4 + offsetY, currentValueText);
 
-    // QPropertyAnimation *animation = new QPropertyAnimation(this, "currentValue");
-    // animation->setDuration(500);  // 设置动画持续时间
-    // animation->setStartValue(0);  // 设置起始值
-    // animation->setEndValue(currentValue);    // 设置结束值
-    // animation->start();
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "currentValue");
+    animation->setDuration(500);  // 设置动画持续时间
+    animation->setStartValue(0);  // 设置起始值
+    animation->setEndValue(currentValue);    // 设置结束值
+    animation->start();
 
 }

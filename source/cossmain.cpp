@@ -18,7 +18,7 @@ CossMain::~CossMain()
 
 void CossMain::initGui()
 {
-    dbPaint = new DashBoardCircle(ui->w_wave);
+    DashBoardCircle* dbPaint = ui->w_mem;
     dbPaint->setCurrentValue(66);
     ui->stackedWidget->setCurrentIndex(0);
 

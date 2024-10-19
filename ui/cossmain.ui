@@ -17,62 +17,59 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="9,1">
-      <property name="spacing">
-       <number>0</number>
-      </property>
       <item>
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="currentIndex">
          <number>0</number>
         </property>
-        <widget class="QWidget" name="p_perf">
-         <widget class="QLabel" name="label">
-          <property name="geometry">
-           <rect>
-            <x>130</x>
-            <y>150</y>
-            <width>100</width>
-            <height>100</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QWidget" name="w_wave" native="true">
+        <widget class="QWidget" name="page_mem">
+         <widget class="DashBoardCircle" name="w_mem" native="true">
           <property name="geometry">
            <rect>
             <x>320</x>
-            <y>50</y>
+            <y>40</y>
             <width>400</width>
             <height>400</height>
            </rect>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>400</height>
-           </size>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>160</y>
+            <width>121</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="p_info">
-         <widget class="QWidget" name="w_mem" native="true">
+        <widget class="QWidget" name="page_info">
+         <widget class="QWidget" name="w_info" native="true">
           <property name="geometry">
            <rect>
-            <x>370</x>
-            <y>120</y>
-            <width>120</width>
-            <height>80</height>
+            <x>350</x>
+            <y>110</y>
+            <width>201</width>
+            <height>241</height>
            </rect>
           </property>
           <widget class="QLabel" name="label_2">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>40</y>
-             <width>40</width>
-             <height>12</height>
+             <x>40</x>
+             <y>120</y>
+             <width>58</width>
+             <height>16</height>
             </rect>
            </property>
            <property name="text">
@@ -98,7 +95,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -109,6 +106,12 @@
    <class>ButtonBar</class>
    <extends>QWidget</extends>
    <header>buttonbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DashBoardCircle</class>
+   <extends>QWidget</extends>
+   <header>dashboardcircle.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
