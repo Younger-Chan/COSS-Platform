@@ -18,8 +18,10 @@ CossMain::~CossMain()
 
 void CossMain::initGui()
 {
-    DashBoardCircle* dbPaint = ui->w_mem;
+    DashBoardCircle *dbPaint = ui->w_mem;
     dbPaint->setCurrentValue(66);
+    DashBoardWave *dbwPaint = ui->w_info;
+    dbwPaint->setCurrentValue(55);
     ui->stackedWidget->setCurrentIndex(0);
 
     // 创建QMovie对象，加载GIF文件

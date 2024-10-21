@@ -20,20 +20,13 @@ void DashBoardCircle::paintEvent(QPaintEvent *pe)
     painter.setRenderHint(QPainter::Antialiasing, true);
 
     // 定义圆心和半径
-    // QPoint center(width() / 2, height() / 2);
-    // int outerRadius = 100;  // 外圆半径
-    // int innerRadius = 80;   // 内圆半径
-
     // 计算当前控件的最小边
     int side = qMin(width(), height());
     // 动态调整外圆和内圆的半径
     int padding = side * 0.05;  // 留出 5% 边距
     int outerRadius = (side - padding) / 2;  // 动态外圆半径
-    int innerRadius = outerRadius * 0.8;     // 内圆半径占外圆的 80%
+    int innerRadius = outerRadius * 0.85;     // 内圆半径占外圆的 80%
     QPoint center(width() / 2, height() / 2);
-    // int outerRadius = side / 2 - 20;  // 留出20像素边距
-    // int innerRadius = outerRadius - 20;
-    // QPoint center(width() / 2, height() / 2);
 
     QPen whitePen(Qt::transparent, 1);   // 白色边界线
     QBrush whiteBrush(Qt::white);

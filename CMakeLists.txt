@@ -21,6 +21,7 @@ set(TS_FILES
 set(PROJECT_INCLUDES
     include/cossmain.h
     include/dashboardcircle.h
+    include/dashboardwave.h
     include/buttonbar.h
 )
 
@@ -28,6 +29,7 @@ set(PROJECT_SOURCES
     source/main.cpp
     source/cossmain.cpp
     source/dashboardcircle.cpp
+    source/dashboardwave.cpp
     source/buttonbar.cpp
 )
 set(PROJECT_UIS
