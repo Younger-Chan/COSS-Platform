@@ -22,6 +22,7 @@ set(PROJECT_INCLUDES
     include/cossmain.h
     include/dashboardcircle.h
     include/dashboardwave.h
+    include/thermometer.h
     include/buttonbar.h
 )
 
@@ -30,6 +31,7 @@ set(PROJECT_SOURCES
     source/cossmain.cpp
     source/dashboardcircle.cpp
     source/dashboardwave.cpp
+    source/thermometer.cpp
     source/buttonbar.cpp
 )
 set(PROJECT_UIS

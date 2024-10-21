@@ -1,18 +1,17 @@
-#ifndef DASHBOARDWAVE_H
-#define DASHBOARDWAVE_H
+#ifndef THERMOMETER_H
+#define THERMOMETER_H
 
 #include <QWidget>
 #include <QPainter>
 #include <QPainterPath>
 #include <QPropertyAnimation>
-#include <QTimer>
 
-class DashBoardWave: public QWidget
+class Thermometer: public QWidget
 {
     Q_OBJECT
 public:
     // DashBoardWave();
-    explicit DashBoardWave(QWidget *parent = nullptr);
+    explicit Thermometer(QWidget *parent = nullptr);
 
 protected:
     void paintEvent(QPaintEvent *pe) Q_DECL_OVERRIDE;
@@ -22,7 +21,7 @@ public:
 
 private:
     float currentValue = 0;
-    int waveOffset, waveAmplitude, waveLength;
+    // int waveOffset, waveAmplitude, waveLength;
 };
 
-#endif // DASHBOARDWAVE_H
+#endif // THERMOMETER_H

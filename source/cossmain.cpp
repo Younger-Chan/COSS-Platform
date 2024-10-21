@@ -22,6 +22,8 @@ void CossMain::initGui()
     dbPaint->setCurrentValue(66);
     DashBoardWave *dbwPaint = ui->w_info;
     dbwPaint->setCurrentValue(55);
+    Thermometer * temp = ui->w_temp;
+    temp->setCurrentValue(62);
     ui->stackedWidget->setCurrentIndex(0);
 
     // 创建QMovie对象，加载GIF文件

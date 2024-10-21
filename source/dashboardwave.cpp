@@ -2,7 +2,19 @@
 
 DashBoardWave::DashBoardWave(QWidget *parent): QWidget(parent)
 {
-
+    waveAmplitude = 7; // 波浪的振幅
+    waveLength = 100;   // 波浪的波长
+    // 初始化定时器，确保只启动一次
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, [this]() {
+        waveOffset += 5;
+        if(waveOffset > waveLength)
+        {
+            waveOffset = 0;
+        }
+        update();  // 触发重绘
+    });
+    timer->start(100);  // 波浪移动的时间间隔
 }
 
 void DashBoardWave::setCurrentValue(float value)
@@ -48,13 +60,13 @@ void DashBoardWave::paintEvent(QPaintEvent *pe)
     QPainterPath wavePath;
     wavePath.moveTo(center.x() - innerRadius, center.y() + fillHeight);  // 从左侧内圆边开始，并按填充比例下移基线
 
-    int waveAmplitude = 7; // 波浪的振幅
-    int waveLength = 50;   // 波浪的波长
+    // waveAmplitude = 7; // 波浪的振幅
+    // waveLength = 100;   // 波浪的波长
 
     // 生成波浪线形状
     for(int x = -innerRadius; x <= innerRadius; x += 5)
     {
-        int y = waveAmplitude * sin((x + innerRadius) * 2 * M_PI / waveLength);
+        int y = waveAmplitude * sin((x + innerRadius + waveOffset) * 2 * M_PI / waveLength);
         // 调整波浪线位置，使其始终处于内圆范围内
         wavePath.lineTo(center.x() + x, center.y() + fillHeight + y);
     }

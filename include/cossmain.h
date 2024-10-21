@@ -6,6 +6,7 @@
 #include <QMovie>
 #include "dashboardcircle.h"
 #include "buttonbar.h"
+#include "thermometer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
