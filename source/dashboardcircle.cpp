@@ -52,7 +52,6 @@ void DashBoardCircle::paintEvent(QPaintEvent *pe)
     // 创建剪切路径，用于显示填充部分
     QPainterPath path;
     path.addEllipse(arcRect); // 添加完整的椭圆
-    // painter.setClipPath(path); // 设置剪切区域
 
     // 绘制已填充的部分
     painter.setBrush(QColor(QStringLiteral("#62d2a2"))); // 绿色表示当前值的区域
@@ -95,7 +94,7 @@ void DashBoardCircle::paintEvent(QPaintEvent *pe)
         // 在每个刻度旁边绘制数字
         QString label = QString::number(i * 10); // 刻度值为 0, 10, 20, ..., 100
         // 计算标签位置，向内偏移一定的距离
-        QPointF labelPoint(center.x() + (innerRadius + tickLength) * cos(radian) - 8, // 向内偏移10   - tickLength - 15
+        QPointF labelPoint(center.x() + (innerRadius + tickLength) * cos(radian) - 8, // 向内偏移8   - tickLength - 15
                            center.y() + (innerRadius + tickLength) * sin(radian) + 3); // 确保与刻度线相对位置合理
         painter.drawText(labelPoint, label);
 
@@ -118,7 +117,6 @@ void DashBoardCircle::paintEvent(QPaintEvent *pe)
     }
 
     // 绘制指针
-
     // 绘制圆心的小圆作为指针的起点
     int circleRadius = 5;  // 小圆的半径
     painter.setBrush(QColor(QStringLiteral("#f57170")));  // 设置小圆为黑色

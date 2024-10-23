@@ -2,8 +2,14 @@
 
 DashBoardWave::DashBoardWave(QWidget *parent): QWidget(parent)
 {
-    waveAmplitude = 7; // 波浪的振幅
-    waveLength = 100;   // 波浪的波长
+    // 获取 widget 的宽度和高度
+    int widgetWidth = width();
+    int widgetHeight = height();
+
+    // 定义波浪的振幅与波长
+    waveAmplitude = qMax(5.0f, widgetHeight * 0.07);  // 确保振幅至少为 7
+    waveLength = qMax(50.0f, widgetWidth * 0.8);      // 确保波长至少为 80
+
     // 初始化定时器，确保只启动一次
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, [this]() {
@@ -60,9 +66,6 @@ void DashBoardWave::paintEvent(QPaintEvent *pe)
     QPainterPath wavePath;
     wavePath.moveTo(center.x() - innerRadius, center.y() + fillHeight);  // 从左侧内圆边开始，并按填充比例下移基线
 
-    // waveAmplitude = 7; // 波浪的振幅
-    // waveLength = 100;   // 波浪的波长
-
     // 生成波浪线形状
     for(int x = -innerRadius; x <= innerRadius; x += 5)
     {
@@ -71,8 +74,9 @@ void DashBoardWave::paintEvent(QPaintEvent *pe)
         wavePath.lineTo(center.x() + x, center.y() + fillHeight + y);
     }
 
-    // 创建封闭路径，返回到波浪线起点并封闭下方区域
-    wavePath.lineTo(center.x() + innerRadius, center.y() + innerRadius);  // 右侧到底部
+    // 创建封闭路径
+    wavePath.lineTo(center.x() + innerRadius, center.y() + fillHeight);  // 右侧到波浪线结束点
+    wavePath.lineTo(center.x() + innerRadius, center.y() + innerRadius);  // 右下角
     wavePath.arcTo(center.x() - innerRadius, center.y() - innerRadius, 2 * innerRadius, 2 * innerRadius, 0, -180); // 内圆下半部分的弧线
     wavePath.closeSubpath();  // 完成封闭路径
 
