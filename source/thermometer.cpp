@@ -38,6 +38,28 @@ void Thermometer::paintEvent(QPaintEvent *pe)
     painter.setBrush(QColor(QStringLiteral("#a8e6cf")));
     painter.drawRect(rect);  // 绘制矩形
 
+    // 定义刻度数量和长刻度间隔
+    int tickCount = 100;
+    int longTickInterval = 11;
+
+    // 计算刻度之间的间距
+    double tickSpacing = static_cast<double>(rectHeight) / tickCount;
+
+    // 绘制矩形内的刻度
+    for (int i = 0; i < tickCount; ++i) {
+        int tickLength = (i % longTickInterval == 0) ? 15 : 8;  // 长刻度或短刻度
+        int y = rect.top() + i * tickSpacing;  // 当前刻度的垂直位置
+
+        // 定义刻度的起点和终点
+        QPoint startPoint(rect.left(), y);
+        QPoint endPoint(rect.left() + tickLength, y);  // 在矩形内水平延伸
+
+        // 绘制刻度
+        QPen tickPen(Qt::black, 1);
+        painter.setPen(tickPen);
+        painter.drawLine(startPoint, endPoint);
+    }
+
     // 使用 QRect 创建圆形区域
     QRect ellipseRect(center.x() - radius, center.y() - radius, 2 * radius, 2 * radius);
     QRegion ellipseRegion(ellipseRect, QRegion::Ellipse);
