@@ -68,8 +68,8 @@
           <property name="geometry">
            <rect>
             <x>520</x>
-            <y>10</y>
-            <width>50</width>
+            <y>50</y>
+            <width>60</width>
             <height>400</height>
            </rect>
           </property>
